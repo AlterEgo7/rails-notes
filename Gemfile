@@ -12,7 +12,9 @@ gem 'puma', '~> 3.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -25,6 +27,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'rspec-rails', '3.5.0.beta3'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
 
 group :development do
