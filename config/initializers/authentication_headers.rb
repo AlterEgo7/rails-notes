@@ -1,0 +1,8 @@
+# Set the header name for username and token retrieval
+
+Rails.application.configure do
+  config.authentication_headers = {
+      username: 'X-User-Name',
+      auth_token: 'X-Auth-Token'
+  }
+end
