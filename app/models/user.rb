@@ -7,6 +7,7 @@ class User < ApplicationRecord
   before_save :ensure_authentication_token
 
   validates :auth_token, uniqueness: true
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
 
   def ensure_authentication_token
     if auth_token.blank?
