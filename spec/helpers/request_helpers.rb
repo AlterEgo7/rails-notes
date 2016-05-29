@@ -15,9 +15,9 @@ module RequestHelper
       request.headers['Content-Type'] = format.to_s
     end
 
-    def api_authorization_headers(username, token)
-      request.headers[Rails.application.config[:authentication_headers][:username]] = username
-      request.headers[Rails.application.config[:authentication_headers][:auth_token]] = token
+    def api_authentication_headers(username, token)
+      request.headers[Rails.configuration.authentication_headers[:username]] = username
+      request.headers[Rails.configuration.authentication_headers[:auth_token]] = token
     end
   end
 end

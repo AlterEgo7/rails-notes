@@ -10,12 +10,12 @@ class Api::V1::SessionsController < ApplicationController
       user.reset_authentication_token!
       render json: user, status: 200, location: [:api, user]
     else
-      render json: { errors: 'Invalid email or password' }, status: 422
+      render json: { errors: 'Invalid username or password' }, status: 422
     end
   end
 
   def destroy
-    user = User.find_by(username: user_credentials_from_header[:username])
+    user = User.find_by(auth_token: params[:id])
     user.reset_authentication_token!
     head 204
   end
